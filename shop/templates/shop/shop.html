@@ -1,0 +1,31 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+<center><h3>Sklep internetowy</h3></center>
+<hr>
+<div class="container">
+    <div class="row" style="column-count:3;">
+    {% for product in products %}
+        <div class="col">
+            <div class="box crop">
+                <h3>{{product}}</h3>
+                <img src={{product.image.url}}>
+                <hr>
+                <div class='a'>
+                    <p>{{product.description}}</p>
+                </div>
+            <div>
+                <button class='btn btn-primary' id="button1">Dodaj do koszyka</button>
+                <button class='btn btn-secondary' id="button2">Przejdź do produktu</button>
+             </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
